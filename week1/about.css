@@ -1,5 +1,6 @@
 /*ABOUT ME*/
 *{margin:0;}
+body{height:2000px}
 .all_in{display: flex;
     flex-direction: column;
     text-align: center;
