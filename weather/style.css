@@ -1,0 +1,19 @@
+*{color:gray}
+.container{margin-top: 23px;
+    padding:15px 20px;
+    width: 600px;
+    height: 230px;
+border: 1px solid gray;
+border-radius: 10px;;
+}
+.btn-primary,.btn-success{padding: 5px 10px;
+    font-size: 18px;
+}
+.info{margin-top: 10px;
+    line-height: 2px;}
+.gradus{color:black;
+ 
+font-size: 50px;}
+.fc{margin-bottom:37px ;
+    margin-left: 7px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form >
+        <div class="row" >
+            <div class="col-8">
+                <input id="searchingCity" autocomplete="off" type="search" class="form-control" placeholder="Enter a city">
+            </div>
+            <div class="col-2">
+                <input  type="submit" id= "submitInput" class="btn btn-primary" value="Search"></input>
+            </div>
+            <div class="col-2">
+                <button  id="getCurentPosition" class="btn btn-success" >Current</button>
+            </div>
+        </form>
+    
+</div>
+        <div class="row">
+            <div class="col info">
+                <h2 id="showCity"></h2>
+                <p id="currentDate"></p>
+                <p id="description"></p>
+            </div>
+        </div>
+       <div class="row getInCenter">
+        <div class="col-8" style="display:flex;align-items:center; ">
+            <div ><img src="sunny.png"></div>
+            <p class="gradus" id="gradus"></p>
+           <div class="fc">
+                <a href="#" id="cels">°C</a>
+                |
+            <a href="#" id="faren">°F</a>
+        </div>
+            
+        </div>
+        <div class="col-3 info">
+            <p>Precipitation:0%</p>
+        <p>Humidity:77%</p>
+        <p>Wind:8 km/h</p>
+        </div>
+
+       </div>
+    </div>
+  
+    <script src="js.js"></script>
+</body>
+</html>
+
+   
+    
+                
