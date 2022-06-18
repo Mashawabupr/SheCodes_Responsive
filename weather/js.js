@@ -8,9 +8,37 @@ function showWhatCity(input) {
   axios.get(apiURL).then(showApi);
 }
 showWhatCity("Paris");
+
+function displayForecast() {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Satuday",
+  ];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML += `
+                   <div class="col-2">
+                      <p>${day}</p>
+                      <img src="sunny.png">
+                      <p>27°C</p>
+                   </div>
+                
+       `;
+  });
+  forecastHTML += `</div>`;
+  document.querySelector("#forecast").innerHTML = forecastHTML;
+}
+displayForecast();
+
 function showApi(response) {
   //CITY
-  console.log(response.data.location.localtime.split(" ")[1]);
+
   function cuurentDate() {
     let nowDate = new Date();
     let days = [
@@ -28,9 +56,10 @@ function showApi(response) {
     return `${days[day]} ${time}`;
   }
   document.querySelector("#currentDate").innerHTML = cuurentDate();
+
   document
     .querySelector("#img")
-    .setAttribute("href", response.data.current.condition.icon);
+    .setAttribute("src", response.data.current.condition.icon);
   document.querySelector("#gradus").innerHTML = Math.round(
     response.data.current.temp_c
   );
@@ -62,18 +91,16 @@ function showCity(event) {
 document.querySelector("#submitInput").addEventListener("click", showCity);
 
 //current weather
-
-function showMyPosition() {
-  navigator.geolocation.getCurrentPosition(position);
-  function position(position) {
+function balo(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showposition);
+  function showposition(position) {
     let lon = position.coords.longitude;
     let lat = position.coords.latitude;
     let apiKey = "0a438755c0214c93834115811221606";
     let apiURL = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}`;
-
     axios.get(apiURL).then(showApi);
   }
 }
-document
-  .querySelector("#getCurentPosition")
-  .addEventListener("click", showMyPosition);
+
+document.querySelector("#getCurentPosition").addEventListener("click", balo);
