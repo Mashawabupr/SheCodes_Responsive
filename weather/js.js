@@ -8,8 +8,15 @@ function showWhatCity(input) {
   axios.get(apiURL).then(showApi);
 }
 showWhatCity("Paris");
-
-function displayForecast() {
+function showForecast(input) {
+  let apiKey = "0a438755c0214c93834115811221606";
+  let apiURL = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${input}&days=7`;
+  axios.get(apiURL).then(displayForecast);
+}
+showForecast("Paris");
+function formatDay(date) {
+  let newDate = new Date(date * 1000);
+  let newday = newDate.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -19,14 +26,18 @@ function displayForecast() {
     "Friday",
     "Satuday",
   ];
+  return days[newday];
+}
+function displayForecast(response) {
+  let days = response.data.forecast.forecastday;
   let forecastHTML = `<div class="row">`;
 
   days.forEach(function (day) {
     forecastHTML += `
                    <div class="col-2">
-                      <p>${day}</p>
-                      <img src="sunny.png">
-                      <p>27°C</p>
+                      <p>${formatDay(day.date_epoch)}</p>
+                      <img src=${day.day.condition.icon}>
+                      <p>${Math.round(day.day.avgtemp_c)}°C</p>
                    </div>
                 
        `;
@@ -34,7 +45,6 @@ function displayForecast() {
   forecastHTML += `</div>`;
   document.querySelector("#forecast").innerHTML = forecastHTML;
 }
-displayForecast();
 
 function showApi(response) {
   //CITY
