@@ -9,6 +9,15 @@ body {
   --primary-color-down: rgb(255, 255, 81);
 }
 /*HOMEPAGE*/
+.all_in {
+  padding: 40px;
+}
+.yoga {
+  font-size: 18px;
+  opacity: 0.7;
+  margin: 10px 0 30px;
+  line-height: 1.5;
+}
 .info {
   padding: 60px;
   display: flex;
@@ -28,20 +37,19 @@ body {
   cursor: pointer;
   transition: 0.5s;
 }
-.contact:hover,
-.about:hover {
+
+.contact:hover {
   box-shadow: 2px 3px 10px rgb(156, 156, 156);
 }
 .about {
   padding: 15px 18px;
 }
-.contact,
-.about:hover {
+.contact {
   background-color: var(--primary-color-up);
   border: 1px solid var(--primary-color-up);
   color: var(--primary-color-down);
 }
-.about,
+
 .contact:hover {
   background-color: var(--primary-color-down);
   border: 1px solid var(--primary-color-down);
