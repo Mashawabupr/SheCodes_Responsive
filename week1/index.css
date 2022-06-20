@@ -18,12 +18,7 @@ body {
   margin: 10px 0 30px;
   line-height: 1.5;
 }
-.info {
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
+
 .container-a {
   margin-top: 40px;
 }
