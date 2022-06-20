@@ -12,18 +12,11 @@ body {
 .all_in {
   padding: 40px;
 }
-.yoga {
-  font-size: 18px;
-  opacity: 0.7;
-  margin: 10px 0 30px;
-  line-height: 1.5;
-}
 
 .container-a {
   margin-top: 40px;
 }
-.contact,
-.about {
+.contact {
   text-decoration: none;
   padding: 15px;
   border-radius: 5px;
@@ -36,9 +29,7 @@ body {
 .contact:hover {
   box-shadow: 2px 3px 10px rgb(156, 156, 156);
 }
-.about {
-  padding: 15px 18px;
-}
+
 .contact {
   background-color: var(--primary-color-up);
   border: 1px solid var(--primary-color-up);
